@@ -1,3 +1,3 @@
-# zavrsni_pzw
-Autori: Leonarda Scutari i Marko Vrban
-Tema: Online tečajevi i edukacijska platforma
+# zavrsni_pzw - Završni projekt iz kolegija Programiranje za web
+Autori: **Leonarda Scutari i Marko Vrban** <br>
+Tema: **Online tečajevi i edukacijska platforma**
