@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2 style="color: gray;">Predavac</h2>
+<br>
+<a style="color: green;" href="{% url 'main:addpr' %}">Dodaj predavaca</a>
+{% for predavac in predavac_list %}
+    <div class="book">
+        <h4>Ime i prezime: {{ predavac.predavac_ime }} {{ predavac.predavac_prezime }}</h4>
+        <p>Email: {{ predavac.predavac_email }}<br>
+        Broj sati: {{ predavac.predavac_brojSati }}</p>
+    </div>
+    <a style="color: #003749;" href="{% url 'main:updatepr' predavac.pk %}">Azuriraj</a>
+    <a style="color: red;" href="{% url 'main:deletepr' predavac.pk %}">Obrisi</a>
+{% endfor %}
+{% endblock %}

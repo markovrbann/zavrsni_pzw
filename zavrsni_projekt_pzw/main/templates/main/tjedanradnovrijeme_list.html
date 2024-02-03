@@ -1,0 +1,11 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2 style="color: gray;">Opcije radnog vremen preko tjedna</h2>
+<br>
+{% for tjedanradnovrijeme in tjedanradnovrijeme_list %}
+    <div class="book">
+        <h4>Naziv: {{ tjedanradnovrijeme.dan_u_tjednu }} {{ tjedanradnovrijeme.termin }}  </h4>
+    </div>
+{% endfor %}
+{% endblock %}

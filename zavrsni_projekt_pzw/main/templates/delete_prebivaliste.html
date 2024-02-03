@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Izbrisi prebivaliste</title>
+</head>
+<body>
+    <h1>Izbrisi prebivaliste</h1>
+    <p>Jeste li sigurni da zelite obrisati prebivaliste "{{ prebivaliste.prebivaliste_nazivMjesta }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Delete">
+    </form>
+</body>
+</html>

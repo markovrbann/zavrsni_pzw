@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2 style="color: gray;">Tecaj</h2>
+<br>
+<a style="color: green;" href="{% url 'main:addte' %}">Dodaj tecaj</a>
+{% for tecaj in tecaj_list %}
+    <div class="book">
+        <h4>Naziv: {{ tecaj.tecaj_naziv }} </h4>
+        <p>Sadrzaj: {{ tecaj.tecaj_sadrzaj }}<br>
+        Broj sati: {{ tecaj.tecaj_brojSati }}<br>
+        Nositelj: {{ tecaj.tecaj_nositelj }}</p>
+    </div>
+    <a style="color: #003749;" href="{% url 'main:updatete' tecaj.pk %}">Azuriraj</a>
+    <a style="color: red;" href="{% url 'main:deletete' tecaj.pk %}">Obrisi</a>
+{% endfor %}
+{% endblock %}

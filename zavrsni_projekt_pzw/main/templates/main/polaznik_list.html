@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2 style="color: gray;">Polaznik</h2>
+<br>
+<a style="color: green;" href="{% url 'main:addpol' %}">Dodaj polaznika</a>
+{% for polaznik in polaznik_list %}
+    <div class="book">
+        <h4>Ime i prezime: {{ polaznik.polaznik_ime }} {{polaznik.polaznik_prezime }}</h4>
+        <p>OIB: {{ polaznik.polaznik_oib}}<br>
+        Prebivaliste: {{ polaznik.polaznik_prebivaliste}}</p>
+    </div>
+    <a style="color: #003749;" href="{% url 'main:updatepol' polaznik.pk %}">Azuriraj</a>
+    <a style="color: red;" href="{% url 'main:deletepol' polaznik.pk %}">Obrisi</a>
+{% endfor %}
+{% endblock %}

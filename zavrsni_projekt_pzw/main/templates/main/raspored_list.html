@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2 style="color: gray;">Raspored</h2>
+<br>
+<a style="color: green;" href="{% url 'main:addras' %}">Dodaj raspored</a>
+{% for raspored in raspored_list %}
+    <div class="book">
+        <h4>Termin: {{ raspored.termin }}</h4>
+        <p>Tecaj: {{ raspored.tecaj }}</p>
+    </div>
+    <a style="color: #003749;" href="{% url 'main:updateras' raspored.pk %}">Azuriraj</a>
+    <a style="color: red;" href="{% url 'main:deleteras' raspored.pk %}">Obrisi</a>
+{% endfor %}
+{% endblock %}
