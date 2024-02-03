@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2 style="color: gray;">Prebivaliste</h2>
+<br>
+<a style="color: green;" href="{% url 'main:addpre' %}">Dodaj prebivaliste</a>
+{% for prebivaliste in prebivaliste_list %}
+    <div class="book">
+        <h4>Naziv mjesta: {{ prebivaliste.prebivaliste_nazivMjesta }} </h4>
+        <p>Postanski broj: {{ prebivaliste.prebivaliste_postanskiBroj }}</p>
+    </div>
+    <a style="color: #003749;" href="{% url 'main:updatepre' prebivaliste.pk %}">Azuriraj</a>
+    <a style="color: red;" href="{% url 'main:deletepre' prebivaliste.pk %}">Obrisi</a>
+{% endfor %}
+{% endblock %}

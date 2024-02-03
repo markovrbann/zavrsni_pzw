@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body style="background-color: rgb(236, 249, 253);">
+    <h2>Završni rad iz kolegija Programiranje za web</h2>
+    {% if user.is_authenticated %}
+    <p><em>Dobrodošli: <strong>{{ user.username }}</strong>!!</em> <a style="color: rgb(0, 38, 255);" href="/accounts/logout">Odjava</a></p>
+    {% else %}
+    <p>Niste prijavljeni. Prijavite se.</p>
+    {% endif %}
+    <h3>Izbornik</h3>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:home' %}">Home</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:predavaci' %}">Predavaci</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:pretraga' %}">Predavaci (pretraga po slovu m)</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:tecajevi' %}">Tecajevi</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:prebivaliste' %}">Prebivaliste</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:polaznik' %}">Polaznici</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:tjedanradnovrijeme' %}">Radno vrijeme(opcije termina)</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:raspored' %}">Raspored</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:ocjena' %}">Ocjena</a></li>
+            <li><a style="color: rgb(0, 38, 255);" href="{% url 'main:register' %}">Registracija</a>/<a style="color: rgb(0, 38, 255);" href="/accounts/login">Prijava</a></li>
+
+
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

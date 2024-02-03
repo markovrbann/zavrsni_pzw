@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Izbrisi ocjenu</title>
+</head>
+<body>
+    <h1>Izbrisi ocjenu</h1>
+    <p>Jeste li sigurni da zelite obrisati ocjenu "{{ ocjena.ocjena }}" za "{{ ocjena.polaznik }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Potvrdi brisanje">
+    </form>
+</body>
+</html>

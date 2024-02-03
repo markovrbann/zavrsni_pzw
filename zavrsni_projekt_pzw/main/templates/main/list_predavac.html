@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2> Pretraga </h2>
+<br>
+<ul>
+    {% for predavac in predavac %}
+        {% if predavac.predavac_ime|first == 'm' or predavac.predavac_ime|first == 'M' %}
+            <li>{{ predavac.predavac_ime }} {{ predavac.predavac_prezime }}</li>
+        {% endif %}
+    {% empty %}
+        <li>Nema predavača čije ime započinje s 'M'</li>
+    {% endfor %}
+</ul>
+{% endblock %}

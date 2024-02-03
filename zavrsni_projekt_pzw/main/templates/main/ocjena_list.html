@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+{% block content %}
+<br>
+<h2 style="color: gray;">Ocjene</h2>
+<br>
+<a style="color: green;" href="{% url 'main:addocj' %}">Dodaj ocjenu</a>
+{% for ocjena in ocjena_list %}
+    <div class="book">
+        <h4>Polaznik: {{ ocjena.polaznik}}</h4>
+        <p>Tecaj: {{ ocjena.tecaj }} <br>
+        Ocjena: {{ ocjena.ocjena}}<br>
+        Polozen tecaj: {{ ocjena.polozen_tecaj}}</p>
+    </div>
+    <a style="color: #003749;" href="{% url 'main:updateocj' ocjena.pk %}">Azuriraj</a>
+    <a style="color: red;" href="{% url 'main:deleteocj' ocjena.pk %}">Obrisi</a>
+{% endfor %}
+{% endblock %}
